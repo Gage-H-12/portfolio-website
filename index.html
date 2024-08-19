@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <!--HEAD-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" type="text/css" href="./css/portfolio-website.css" />
+  </head>
+  <!--END HEAD-->
+
+  <!--BODY-->
+  <body class="background">
+    <!--NAVBAR-->
+    <div class="navbar">
+      <a class="active" href="#Home">Home</a>
+      <a href="#About">About</a>
+      <a href="#GitHub">GitHub</a>
+      <a href="#Contact">Contact</a>
+    </div>
+    <!--END NAVBAR-->
+    <br />
+    <br />
+    <!--BACKGROUND VIDEO-->
+    <div id="Home">
+      <video autoplay muted loop id="typing_video">
+        <source src="video/video-effect.mp4" type="video/mp4" />
+        <!--Display message if video fails to run-->
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+    <!--ENDBACKGROUND VIDEO-->
+
+    <!--VIDEO TEXT-->
+    <div class="video_text">
+      <h1 class="white-text">Website Portfolio</h1>
+      <strong>
+        <p class="center">
+          <br />
+          My name is _____. Welcome to my portfolio website.
+          <br />
+          <br />
+          Thank you for stopping by and enjoy!
+        </p>
+      </strong>
+    </div>
+    <!--END VIDEO TEXT-->
+
+    <!--ABOUT SECTION-->
+    <div class="row" id="About">
+      <!--left column-->
+      <div class="column_2">
+        <img
+          src="img/laptop.jpg"
+          alt="Replace with your own image and description"
+        />
+      </div>
+      <!--right column-->
+      <div class="column_1">
+        <h1>About</h1>
+        <p>This is my first portfolio website</p>
+      </div>
+    </div>
+    <!--END ABOUT SECTION-->
+
+    <!--GITHUB SECTION-->
+    <div class="row" id="GitHub">
+      <!--left column-->
+      <div class="column_1">
+        <h1>GitHub</h1>
+        <div>
+          ....
+          <br />
+          <p class="center">
+            <a href="https://github.com/Gage-H-12" target="_blank">My GitHub</a>
+          </p>
+        </div>
+      </div>
+      <!--right column-->
+      <div class="column_2">
+        <a href="" target="_blank"
+          ><img src="./img/GitHub.png" alt="GitHub Logo"
+        /></a>
+      </div>
+    </div>
+    <!--END GITHUB SECTION-->
+
+    <!--CONTACT SECTION-->
+    <div class="row" id="Contact">
+      <!--contact image, left column-->
+      <div class="column_2 column_tall">
+        <img src="img/monitor.jpeg" alt="Contact_Image" />
+      </div>
+      <!--contact form, right column-->
+      <div class="column_1 column_tall">
+        <h1>Contact</h1>
+        <!--this specifies where and how to send the form data; we are leaving it blank -->
+        <form action="" method="POST">
+          <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
+          <label>Name:</label>
+          <input type="text" placeholder="Please enter your name here" />
+          <label>Email:</label>
+          <input
+            type="text"
+            id="Email"
+            placeholder="Please enter your email here"
+          />
+          <label>Message:</label>
+          <input
+            type="text"
+            id="Message"
+            name="Message"
+            placeholder="Please write your message here"
+          />
+          <input type="submit" value="SUBMIT" />
+        </form>
+      </div>
+    </div>
+    <!--END CONTACT SECTION-->
+    <!--FOOTER-->
+    <footer>
+      <div>
+        <p class="center">&copy .... <a href="..." target="_blank"></a></p>
+        <br />
+      </div>
+    </footer>
+    <!--END FOOTER-->
+  </body>
+  <!--END BODY-->
+</html>
