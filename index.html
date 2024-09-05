@@ -5,25 +5,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Portfolio Website</title>
+    <link rel="shortcut icon" type="img/jpg" href="img/coding_icon.png" />
     <link rel="stylesheet" type="text/css" href="./css/portfolio-website.css" />
   </head>
   <!--END HEAD-->
 
   <!--BODY-->
-  <body class="background">
+  <body class="Background">
     <!--NAVBAR-->
-    <div class="navbar">
+    <div class="Navbar">
       <a class="active" href="#Home">Home</a>
+      <a href="#Slideshow">Slideshow</a>
       <a href="#About">About</a>
       <a href="#GitHub">GitHub</a>
-      <a href="#Contact">Contact</a>
+      <a onclick="openForm()" ondblclick="closeForm()" class="contact"
+        >Contact</a
+      >
     </div>
     <!--END NAVBAR-->
     <br />
     <br />
     <!--BACKGROUND VIDEO-->
     <div id="Home">
-      <video autoplay muted loop id="typing_video">
+      <video autoplay muted loop id="Typing_video">
         <source src="video/video-effect.mp4" type="video/mp4" />
         <!--Display message if video fails to run-->
         Your browser does not support HTML5 video.
@@ -46,17 +50,91 @@
     </div>
     <!--END VIDEO TEXT-->
 
+    <!-- Slideshow Section -->
+    <div id="Slideshow">
+      <div id="Slideshow_Background">
+        <div id="Slideshow_Container">
+          <!-- slide 1/6 -->
+          <div class="mySlides fade">
+            <img
+              class="Slideshow_Images"
+              src="img/HTML_CSS_and_JavaScript.jpeg"
+              alt="Picture of self"
+            />
+            <div class="text">...</div>
+          </div>
+          <!-- slide 2/6 -->
+          <div class="mySlides fade">
+            <img
+              class="Slideshow_Images"
+              src="img/calculator.png"
+              alt="HTML, CSS, and JS logos"
+            />
+            <div class="text">...</div>
+          </div>
+          <!-- slide 3/6 -->
+          <div class="mySlides fade">
+            <img
+              class="Slideshow_Images"
+              src="img/Square Custom Picture.png"
+              alt="..."
+            />
+            <div class="text">...</div>
+          </div>
+          <!-- slide 4/6 -->
+          <div class="mySlides fade">
+            <img
+              class="Slideshow_Images"
+              src="img/Square Custom Picture.png"
+              alt="..."
+            />
+            <div class="text">...</div>
+          </div>
+          <!-- slide 5/6 -->
+          <div class="mySlides fade">
+            <img
+              class="Slideshow_Images"
+              src="img/Square Custom Picture.png"
+              alt="..."
+            />
+            <div class="text">...</div>
+          </div>
+          <!-- slide 6/6 -->
+          <div class="mySlides fade">
+            <img
+              class="Slideshow_Images"
+              src="img/Square Custom Picture.png"
+              alt="..."
+            />
+            <div class="text">...</div>
+          </div>
+          <!-- previous and next buttons -->
+          <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br /><!-- adds a space between the slideshow images and the dots -->
+        <div style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+          <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+      </div>
+    </div>
+
     <!--ABOUT SECTION-->
-    <div class="row" id="About">
+    <div class="Row" id="About">
       <!--left column-->
-      <div class="column_2">
+      <div class="Column_2">
         <img
           src="img/laptop.jpg"
           alt="Replace with your own image and description"
         />
       </div>
       <!--right column-->
-      <div class="column_1">
+      <div class="Column_1">
         <h1>About</h1>
         <p>This is my first portfolio website</p>
       </div>
@@ -64,9 +142,9 @@
     <!--END ABOUT SECTION-->
 
     <!--GITHUB SECTION-->
-    <div class="row" id="GitHub">
+    <div class="Row" id="GitHub">
       <!--left column-->
-      <div class="column_1">
+      <div class="Column_1">
         <h1>GitHub</h1>
         <div>
           ....
@@ -77,8 +155,8 @@
         </div>
       </div>
       <!--right column-->
-      <div class="column_2">
-        <a href="" target="_blank"
+      <div class="Column_2">
+        <a href="https://github.com" target="_blank"
           ><img src="./img/GitHub.png" alt="GitHub Logo"
         /></a>
       </div>
@@ -86,33 +164,45 @@
     <!--END GITHUB SECTION-->
 
     <!--CONTACT SECTION-->
-    <div class="row" id="Contact">
-      <!--contact image, left column-->
-      <div class="column_2 column_tall">
-        <img src="img/monitor.jpeg" alt="Contact_Image" />
-      </div>
-      <!--contact form, right column-->
-      <div class="column_1 column_tall">
-        <h1>Contact</h1>
-        <!--this specifies where and how to send the form data; we are leaving it blank -->
-        <form action="" method="POST">
-          <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
-          <label>Name:</label>
-          <input type="text" placeholder="Please enter your name here" />
-          <label>Email:</label>
+    <div id="Contact">
+      <button onclick="openForm()" class="Pop_Up_Button">Contact</button>
+      <div class="form-popup" id="myForm">
+        <form
+          action="https://formspree.io/info@learncodinganywhere.com"
+          method="POST"
+          class="form-container"
+        >
+          <h1>Contact</h1>
+          <label for="name"><b>Name</b></label>
           <input
             type="text"
-            id="Email"
-            placeholder="Please enter your email here"
+            placeholder="Type your name here"
+            name="name"
+            required
           />
-          <label>Message:</label>
+          <label for="phone"><b>Phone</b></label>
           <input
             type="text"
-            id="Message"
-            name="Message"
-            placeholder="Please write your message here"
+            placeholder="Type your phone number here"
+            name="phone"
           />
-          <input type="submit" value="SUBMIT" />
+          <label for="email"><b>Email</b></label>
+          <input
+            type="text"
+            placeholder="Type your email address here"
+            name="email"
+            required
+          />
+          <label for="message"><b>Message</b></label>
+          <input
+            type="text"
+            placeholder="Type your message here"
+            name="message"
+          />
+          <button type="submit" class="btn">SUBMIT</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">
+            CLOSE
+          </button>
         </form>
       </div>
     </div>
@@ -124,6 +214,7 @@
         <br />
       </div>
     </footer>
+    <script src="./js/portfolio-website.js"></script>
     <!--END FOOTER-->
   </body>
   <!--END BODY-->
